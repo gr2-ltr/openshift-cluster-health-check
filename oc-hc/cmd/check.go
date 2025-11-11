@@ -136,16 +136,7 @@ func run(obj checkOptions) {
 		customError(err, obj.debug)
 	}
 
-	err = machineConfigPoolStatus()
-	if err != nil {
-		customError(err, obj.debug)
-	}
-
 	// nodes checks
-	err = csrStatus(clientset)
-	if err != nil {
-		customError(err, obj.debug)
-	}
 
 	err = nodeStatus(clientset)
 	if err != nil {
@@ -166,28 +157,7 @@ func run(obj checkOptions) {
 		customError(err, obj.debug)
 	}
 
-	err = alertsStatus(config)
-	if err != nil {
-		customError(err, obj.debug)
-	}
-
 	err = versionStatus(config)
-	if err != nil {
-		customError(err, obj.debug)
-	}
-
-	// namespace related checks
-	err = podStatus(clientset, obj.containerRestart)
-	if err != nil {
-		customError(err, obj.debug)
-	}
-
-	err = pdbStatus(clientset)
-	if err != nil {
-		customError(err, obj.debug)
-	}
-
-	err = eventStatus(clientset)
 	if err != nil {
 		customError(err, obj.debug)
 	}
