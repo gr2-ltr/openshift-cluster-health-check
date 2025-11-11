@@ -1,4 +1,4 @@
-module github.com/givaldolins/openshift-cluster-health-check
+module github.com/gr2-ltr/openshift-cluster-health-check
 
 go 1.20
 
