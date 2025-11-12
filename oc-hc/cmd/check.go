@@ -126,11 +126,6 @@ func run(obj checkOptions) {
 		customError(err, obj.debug)
 	}
 
-	err = apiStatus(clientset)
-	if err != nil {
-		customError(err, obj.debug)
-	}
-
 	err = etcdStatus(clientset)
 	if err != nil {
 		customError(err, obj.debug)
